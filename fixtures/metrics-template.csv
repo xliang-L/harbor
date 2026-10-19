@@ -1,0 +1,2 @@
+contentId,revisionId,url,date,windowStart,windowEnd,impressions,clicks,conversions,spend,notes,currency,timezone,campaignId,channel
+REPLACE_CONTENT_ID,REPLACE_APPROVED_REVISION_ID,https://example.com/demo,2026-01-02T00:00:00Z,2026-01-01T00:00:00Z,2026-01-02T00:00:00Z,100,5,0,0,DEMO ONLY - replace all sample values,USD,UTC,,email

@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "id": "demo-101",
+      "properties": {
+        "company": "DEMO Harbor Retail",
+        "website": "https://retail.example.com",
+        "firstname": "Demo",
+        "lastname": "Buyer",
+        "email": "buyer@retail.example.com",
+        "industry": "Retail",
+        "country": "US",
+        "hubspot_owner_id": "demo-owner",
+        "sourceUrl": "https://example.com/demo"
+      },
+      "archived": false
+    },
+    {
+      "id": "demo-102",
+      "properties": {
+        "company": "DEMO Harbor Agency",
+        "website": "agency.example.com",
+        "firstname": "Demo",
+        "lastname": "Partner",
+        "email": "partner@agency.example.com",
+        "industry": "Agency",
+        "country": "UK",
+        "hubspot_owner_id": "demo-owner",
+        "sourceUrl": "https://example.com/demo"
+      },
+      "archived": false
+    }
+  ]
+}

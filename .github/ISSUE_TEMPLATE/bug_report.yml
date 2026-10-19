@@ -1,0 +1,32 @@
+name: 问题反馈
+description: 报告可复现的功能或运行问题。
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请勿提交密钥或客户资料。安全漏洞请使用仓库的私密漏洞报告。
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 从哪个页面开始，执行了哪些操作？
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期与实际结果
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      placeholder: 操作系统、Node.js 版本、浏览器、提交或版本号
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 错误信息或截图
+      description: 请先删除令牌、个人信息和业务数据。

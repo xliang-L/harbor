@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 安全漏洞
+    url: https://github.com/xliang-L/harbor/security/advisories/new
+    about: 使用私密渠道报告，不要在公开 Issue 中粘贴敏感数据。

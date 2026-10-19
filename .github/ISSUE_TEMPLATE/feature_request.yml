@@ -1,0 +1,18 @@
+name: 功能建议
+description: 从实际营销流程出发，描述一个需要解决的问题。
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题？
+      description: 描述使用场景和当前操作的困难。
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 怎样算解决了？
+      description: 给出期望行为或具体例子。
+    validations:
+      required: true
