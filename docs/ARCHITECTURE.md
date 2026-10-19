@@ -17,24 +17,36 @@ flowchart TB
 
 `server/storage/workspaces.ts` 按品牌路由到独立 Store；默认库为 `data/harbor.sqlite`，其他库位于 `data/projects/<id>/harbor.sqlite`。品牌上下文必须一致，不能通过更换对象 ID 跨库读取或写入。
 
-`server/store.ts` 使用 SQLite 事务保存 JSON 状态。新领域字段以读取默认值兼容旧库；当前适合小规模本地数据，尚未实现分表、全文索引或大规模归档。
+`server/storage/store.ts` 使用 SQLite 事务保存 JSON 状态。新领域字段以读取默认值兼容旧库；当前适合小规模本地数据，尚未实现分表、全文索引或大规模归档。
 
 ## 模块地图
 
-| 位置                                      | 职责                                               |
-| ----------------------------------------- | -------------------------------------------------- |
-| `src/main.tsx`                            | 应用入口、品牌切换、导航、编辑保护及内容工作台。   |
-| `src/Overview.tsx`                        | 今日待办、事实风险、来源状态、排期与效果质量入口。 |
-| `src/Planning.tsx`                        | 规范、商品、素材、活动与交付检查。                 |
-| `src/Workflows.tsx`                       | 来源、事实、行动、渠道日历与批量指标。             |
-| `src/CRM.tsx`、`Retail.tsx`、`Orders.tsx` | B2B 跟进、零售与订单文件流程。                     |
-| `server/domain/`                          | 事实、活动、指标、CRM 和零售的领域规则。           |
-| `server/workflows/`                       | 请求校验、业务 API、审批、导出和只读集成入口。     |
-| `server/connectors/`                      | 网页、订阅、文件、GA4 与 Postiz 适配器。           |
-| `server/providers/model.ts`               | 模型传输、结构校验、超时与服务端凭据。             |
-| `server/generate.ts`                      | 建议、文案、引用及事实依赖校验。                   |
-| `server/video.ts`、`video/`               | 受信模板预览、渲染、产物验证与失败日志。           |
-| `tests/`                                  | 领域规则、API 契约和浏览器主流程。                 |
+| 位置                                            | 职责                                                       |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| `src/main.tsx`                                  | 仅挂载 React 应用并加载样式。                              |
+| `src/app/App.tsx`                               | 应用外壳、品牌切换、导航、请求状态及未保存编辑保护。       |
+| `src/features/brand/`、`src/features/sources/`  | 品牌档案与市场资料。                                       |
+| `src/features/content/`                         | 内容选择与版本编辑器。                                     |
+| `src/features/analytics/`                       | 指标记录、质量状态与归因观察。                             |
+| `src/features/campaigns/`                       | 规范、商品、素材、活动与交付检查。                         |
+| `src/features/operations/`                      | 来源、事实、行动与渠道日历；事实编辑和交付回执独立成模块。 |
+| `src/features/crm/`、`src/features/retail/`     | B2B 跟进与零售流程。                                       |
+| `src/features/integrations/`                    | 文件与平台导入、订单及 Postiz 只读界面。                   |
+| `src/features/workspace/`                       | 今日工作台与多品牌控制台。                                 |
+| `src/components/`、`src/shared/`、`src/styles/` | 共用组件、前端类型、品牌请求上下文和样式。                 |
+| `server/app.ts`、`server/index.ts`              | 应用组装与本机 HTTP 服务入口。                             |
+| `server/routes/`                                | 请求校验、业务 API、审批、导出和只读集成入口。             |
+| `server/domain/`                                | 事实、活动、指标、CRM、零售与复盘的业务规则。              |
+| `server/connectors/`                            | 网页、订阅、文件、GA4 与 Postiz 适配器。                   |
+| `server/services/`、`server/providers/`         | 内容生成与模型传输、结构校验、超时及服务端凭据。           |
+| `server/storage/`                               | 多品牌工作区与 SQLite 存储。                               |
+| `server/rendering/`                             | 受信模板预览、渲染进程、模板、产物验证与失败日志。         |
+| `scripts/macos/`、`scripts/verify/`             | 本机启动安装及显式执行的来源、视频验证工具。               |
+| `tests/server/`、`tests/e2e/`                   | 领域/API 与浏览器业务回归，按测试目的分开。                |
+
+新增界面放到对应 `src/features/<用途>/`；只有跨功能复用的组件或前端辅助代码进入 `components/` 和 `shared/`。API、业务规则、外部适配器与存储分别放入既有后端目录，不将页面组件或渲染模板堆回应用入口。
+
+根目录保留说明、许可证、必要工具配置与启动入口。测试截图、报告和视频进入被忽略的 `artifacts/`，业务导出与历史本地资料不进入源码仓库。
 
 ## 正确性约束
 

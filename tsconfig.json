@@ -11,5 +11,5 @@
     "noEmit": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["src", "server", "tests", "scripts", "video", "*.ts"]
+  "include": ["src", "server", "tests", "scripts", "*.ts"]
 }

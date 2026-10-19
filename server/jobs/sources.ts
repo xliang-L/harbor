@@ -1,5 +1,5 @@
 import { randomUUID, createHash } from "node:crypto";
-import type { Store } from "../store.ts";
+import type { Store } from "../storage/store.ts";
 import { collectSource } from "../connectors/sources.ts";
 import type { SourceItem } from "../connectors/sources.ts";
 import { publicUrl } from "../security.ts";

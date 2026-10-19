@@ -1,5 +1,5 @@
 import type { Fact, State, Task } from "../types.ts";
-import { reviewQueue } from "../workflows/console-routes.ts";
+import { reviewQueue } from "../routes/console.ts";
 import { onboardingSteps } from "./campaigns.ts";
 import { receiptFactIssues } from "./deliveries.ts";
 import {

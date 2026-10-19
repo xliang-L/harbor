@@ -7,6 +7,7 @@ export default ts.config(
       "dist/**",
       "node_modules/**",
       "data/**",
+      "data-demo/**",
       "artifacts/**",
       "outputs/**",
       "test-results/**",

@@ -101,7 +101,7 @@ npm start
 4. **审核交付**：批准具体版本，建立渠道计划，导出交付包，人工发布后登记回执。
 5. **记录结果**：填写统计窗口，预览指标，再决定下一轮实验。
 
-详细步骤和文件格式见 [使用指南](docs/V3-USER-FLOW.md)。`fixtures/` 提供带 DEMO 标识的证据、商品、指标、联系人和订单样例，导入前请替换实际 ID。
+详细步骤和文件格式见 [使用指南](docs/USER-GUIDE.md)。`fixtures/` 提供带 DEMO 标识的证据、商品、指标、联系人和订单样例，导入前请替换实际 ID。
 
 ### 可选：接入模型
 
@@ -178,13 +178,20 @@ npm run test:e2e      # 隔离数据 + 本机 Chrome
 浏览器回归当前使用 macOS 的 Google Chrome 路径，端口为 `4319`；真实模型在测试配置中关闭。视频流程包含实际渲染与下载，运行时间较长。公开来源检查 `npm run test:public` 是单独的联网操作，不包含在默认测试中。
 
 ```text
-src/                 React 工作台与业务界面
-server/domain/       事实、审批、指标与业务规则
-server/workflows/    API 与业务流程
+src/app/             应用外壳、导航与编辑保护
+src/features/        按品牌、内容、活动、CRM 等用途归类的界面
+src/components/      跨功能共用的界面组件
+src/shared/          前端类型、时间格式与品牌上下文
+src/styles/          应用样式
+server/routes/       API 路由与请求校验
+server/domain/       业务规则与指标投影
 server/connectors/   资料、文件及只读平台适配器
+server/services/     内容生成服务
 server/storage/      多品牌工作区与 SQLite
-video/               Remotion 受信模板
-tests/               领域、接口与浏览器回归
+server/rendering/    视频预览、渲染进程与受信模板
+scripts/             macOS 启动安装与显式验证工具
+tests/server/        领域与 API 回归
+tests/e2e/           浏览器业务流程回归
 fixtures/            合成示例数据
 docs/                使用指南、架构与产品截图
 .github/             CI 与贡献协作模板
@@ -196,7 +203,7 @@ docs/                使用指南、架构与产品截图
 
 | 文档                               | 内容                                           |
 | ---------------------------------- | ---------------------------------------------- |
-| [使用指南](docs/V3-USER-FLOW.md)   | 第一轮工作流、事实复核、交付、指标与导入格式。 |
+| [使用指南](docs/USER-GUIDE.md)     | 第一轮工作流、事实复核、交付、指标与导入格式。 |
 | [架构与设计](docs/ARCHITECTURE.md) | 模块边界、审批与安全规则、设计参考和依赖许可。 |
 | [平台矩阵](docs/PLATFORMS.md)      | 已实现适配器、配置方法与尚未提供的能力。       |
 | [路线图](docs/ROADMAP.md)          | 当前版本能力、已知限制与后续重点。             |

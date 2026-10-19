@@ -1,33 +1,28 @@
+# Dependencies and builds
 node_modules/
 dist/
-data/
-artifacts/
-test-results/
-.env
-playwright-report/
 .tools/
-outputs/
-data-demo/
+
+# Local configuration and credentials
+.env
 .env.*
 !.env.example
+*.pem
+*.key
+
+# Business data and generated output
+data/
+data-demo/
+artifacts/
+outputs/
 *.sqlite
 *.sqlite-*
 *.db
 *.db-*
 *.log
-*.pem
-*.key
+
+# OS and local development metadata
 .DS_Store
 .codex/
 .agents/
 .aws/
-
-# Host-specific operating notes and historical acceptance artifacts stay local.
-LOCAL-RUN.md
-VALIDATION*.md
-migration-manifest.json
-迁移说明.txt
-requirements.txt
-docs/MIGRATION.md
-docs/NETWORK-DIAGNOSIS.md
-docs/POMO-V3-REVIEW.md

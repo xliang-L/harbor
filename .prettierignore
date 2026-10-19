@@ -4,16 +4,6 @@ data/
 data-demo/
 artifacts/
 outputs/
-playwright-report/
-test-results/
 package-lock.json
 LICENSE.md
 docs/images/
-LOCAL-RUN.md
-VALIDATION*.md
-migration-manifest.json
-迁移说明.txt
-requirements.txt
-docs/MIGRATION.md
-docs/NETWORK-DIAGNOSIS.md
-docs/POMO-V3-REVIEW.md

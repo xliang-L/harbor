@@ -9,9 +9,9 @@
     "start": "node --env-file-if-exists=.env --import tsx server/index.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "node --import tsx --test tests/*.test.ts",
+    "test": "node --import tsx --test tests/server/*.test.ts",
     "test:e2e": "playwright test",
-    "test:public": "MODEL_ENABLED=false node --import tsx scripts/verify-sources.ts",
+    "test:public": "MODEL_ENABLED=false node --import tsx scripts/verify/sources.ts",
     "test:e2e:remotion": "TEST_RENDERER=remotion playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

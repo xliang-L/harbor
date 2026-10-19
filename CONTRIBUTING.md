@@ -17,12 +17,14 @@ npm run dev
 ## 提交修改
 
 1. 较大的产品变更先提交 Issue，说明实际问题、触发步骤和预期结果。
-2. 沿用现有目录和领域边界，避免无关重构。
+2. 界面按用途放入 `src/features/`；后端区分 `routes/`、`domain/`、`connectors/`、`services/`、`storage/` 与 `rendering/`。共用界面代码放入 `src/components/` 或 `src/shared/`。
 3. 运行 `npm run format:check`、`npm run lint`、`npm run typecheck`、`npm test` 和 `npm run build`。
 4. 修改主流程时运行相关浏览器回归。当前 `npm run test:e2e` 使用 macOS Chrome 和端口 4319。
 5. PR 说明问题、改变后的行为及实际验证结果；界面改动附不含个人资料的截图。
 
 README 的英文版位于 `README.md`，简体中文版位于 `README.zh-CN.md`；修改功能说明、安装命令或运行边界时，请同步两种语言。
+
+后端回归位于 `tests/server/`，浏览器回归位于 `tests/e2e/`。测试产物统一写入被忽略的 `artifacts/`；临时排查脚本使用系统临时目录。
 
 纯文档修改核对链接、命令、图片与实际能力即可。请不要为凑覆盖率编写只重复实现逻辑的测试。
 

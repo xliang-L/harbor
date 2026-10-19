@@ -1,5 +1,5 @@
 import type { Retail } from "./domain/retail.ts";
-import type { ReviewItem, ReviewEvent } from "./workflows/console-routes.ts";
+import type { ReviewItem, ReviewEvent } from "./routes/console.ts";
 import type { CRM } from "./domain/crm.ts";
 export type Brand = {
   activeProductId?: string;

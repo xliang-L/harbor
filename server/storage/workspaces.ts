@@ -1,8 +1,8 @@
-import { consoleRoutes } from "../workflows/console-routes.ts";
+import { consoleRoutes } from "../routes/console.ts";
 import express from "express";
 import { readdirSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
-import { Store } from "../store.ts";
+import { Store } from "./store.ts";
 import { createApp } from "../app.ts";
 // Separate SQLite databases isolate brands and tasks without cross-project active-state races.
 export function createWorkspaceApp(dataRoot: string, outputRoot: string) {

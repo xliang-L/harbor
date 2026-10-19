@@ -3,8 +3,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { defineConfig } from "@playwright/test";
 export default defineConfig({
-  testDir: "tests",
+  testDir: "tests/e2e",
   testMatch: "*.e2e.ts",
+  outputDir: "artifacts/test-results",
   workers: 1,
   timeout: 90000,
   use: {
@@ -20,5 +21,5 @@ export default defineConfig({
     url: "http://127.0.0.1:4319",
     reuseExistingServer: false,
   },
-  reporter: [["list"], ["html", { open: "never" }]],
+  reporter: [["list"], ["html", { open: "never", outputFolder: "artifacts/playwright-report" }]],
 });

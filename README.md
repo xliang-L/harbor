@@ -101,7 +101,7 @@ Open **[http://127.0.0.1:4317](http://127.0.0.1:4317)**. On Windows, replace the
 4. **Review and deliver:** approve a specific version, create a channel plan, export a package, then record a receipt after manual publication.
 5. **Record results:** enter the reporting window, preview the metrics and decide on the next experiment.
 
-See the [user guide](docs/V3-USER-FLOW.md) for detailed steps and file formats. The `fixtures/` directory contains DEMO evidence, products, metrics, contacts and orders; replace IDs as needed before importing. Supporting documentation is currently in Simplified Chinese.
+See the [user guide](docs/USER-GUIDE.md) for detailed steps and file formats. The `fixtures/` directory contains DEMO evidence, products, metrics, contacts and orders; replace IDs as needed before importing. Supporting documentation is currently in Simplified Chinese.
 
 ### Optional: connect a model
 
@@ -178,13 +178,20 @@ npm run test:e2e      # Isolated data + local Chrome
 Browser regression tests currently use the macOS Google Chrome path and port `4319`. Real models are disabled in the test configuration. The video flow performs an actual render and download, so it takes longer. `npm run test:public` performs separate live source checks and is excluded from the default test suite.
 
 ```text
-src/                 React workspace and business interfaces
-server/domain/       Facts, approvals, metrics and business rules
-server/workflows/    APIs and application workflows
+src/app/             Application shell, navigation and draft protection
+src/features/        UI grouped by brand, content, campaigns, CRM and other workflows
+src/components/      Shared UI components
+src/shared/          Frontend types, formatting and workspace context
+src/styles/          Application styles
+server/routes/       API endpoints and request validation
+server/domain/       Business rules and metric projections
 server/connectors/   Source, file and read-only platform adapters
+server/services/     Content generation
 server/storage/      Brand workspaces and SQLite
-video/               Trusted Remotion template
-tests/               Domain, API and browser regressions
+server/rendering/    Video preview, render workers and trusted templates
+scripts/             macOS launchers and explicit verification tools
+tests/server/        Domain and API regressions
+tests/e2e/           Browser workflow regressions
 fixtures/            Synthetic example data
 docs/                Guides, architecture and product screenshots
 .github/             CI and contribution templates
@@ -198,7 +205,7 @@ The README is available in [English](README.md) and [简体中文](README.zh-CN.
 
 | Document                                        | Contents                                                                                 |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [User guide](docs/V3-USER-FLOW.md)              | First workflow, fact review, delivery, metrics and import formats.                       |
+| [User guide](docs/USER-GUIDE.md)                | First workflow, fact review, delivery, metrics and import formats.                       |
 | [Architecture and design](docs/ARCHITECTURE.md) | Module boundaries, approvals, security rules, design references and dependency licenses. |
 | [Platform matrix](docs/PLATFORMS.md)            | Implemented adapters, configuration and capabilities still outside the current scope.    |
 | [Roadmap](docs/ROADMAP.md)                      | Current capabilities, known limits and priorities.                                       |
