@@ -1,16 +1,16 @@
 <div align="center">
 
-<img src="docs/images/cover.png" alt="Harbor — Local-first marketing workspace. From signals to action." width="100%" />
+<img src="images/cover.png" alt="Harbor — Local-first marketing workspace. From signals to action." width="100%" />
 
-[English](README.md) · **简体中文**
+[English](../README.md) · **简体中文**
 
 ### 把资料、内容与结果，收进同一个营销工作台。
 
 Local-first marketing operations · Evidence in. Human decisions. Clear next steps.
 
-[![CI](https://github.com/xliang-L/harbor/actions/workflows/ci.yml/badge.svg)](https://github.com/xliang-L/harbor/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-315B46?style=flat-square)](LICENSE.md) [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A522.13-315B46?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-315B46?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![CI](https://github.com/xliang-L/harbor/actions/workflows/ci.yml/badge.svg)](https://github.com/xliang-L/harbor/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-315B46?style=flat-square)](../LICENSE.md) [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A522.13-315B46?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-315B46?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[快速开始](#quick-start) · [产品预览](#preview) · [功能与边界](#capabilities) · [文档](#documentation) · [参与贡献](CONTRIBUTING.md)
+[快速开始](#quick-start) · [产品预览](#preview) · [功能与边界](#capabilities) · [文档](#documentation) · [参与贡献](../.github/CONTRIBUTING.md)
 
 </div>
 
@@ -28,7 +28,7 @@ Harbor 是一个开源、本地优先的营销工作台。它把来源资料、�
 
 待审内容、到期跟进、近期排期和事实问题集中呈现，点击即可进入对应记录。
 
-![Harbor 今日工作台](docs/images/overview.png)
+![Harbor 今日工作台](images/overview.png)
 
 <table>
   <tr>
@@ -36,8 +36,8 @@ Harbor 是一个开源、本地优先的营销工作台。它把来源资料、�
     <td width="50%"><strong>可追溯的活动交付</strong><br />关联商品、素材与多渠道计划，按实际审批状态检查交付缺口。</td>
   </tr>
   <tr>
-    <td><a href="docs/images/studio.png"><img src="docs/images/studio.png" alt="文案、分镜与版本审批" /></a></td>
-    <td><a href="docs/images/campaigns.png"><img src="docs/images/campaigns.png" alt="活动计划、渠道排期与交付检查" /></a></td>
+    <td><a href="images/studio.png"><img src="images/studio.png" alt="文案、分镜与版本审批" /></a></td>
+    <td><a href="images/campaigns.png"><img src="images/campaigns.png" alt="活动计划、渠道排期与交付检查" /></a></td>
   </tr>
 </table>
 
@@ -89,7 +89,7 @@ npm run build
 npm start
 ```
 
-打开 **[http://127.0.0.1:4317](http://127.0.0.1:4317)**。Windows 可将复制命令替换为 `Copy-Item .env.example .env`；macOS 也可使用项目内的 `启动Harbor.command`。
+打开 **[http://127.0.0.1:4317](http://127.0.0.1:4317)**。Windows 可将复制命令替换为 `Copy-Item .env.example .env`；macOS 也可使用`scripts/macos/` 中的 [启动脚本](../scripts/macos/start.command)。
 
 默认 `MODEL_ENABLED=false`：先用模板走通工作流，再决定是否启用模型。应用只监听本机回环地址。
 
@@ -101,7 +101,7 @@ npm start
 4. **审核交付**：批准具体版本，建立渠道计划，导出交付包，人工发布后登记回执。
 5. **记录结果**：填写统计窗口，预览指标，再决定下一轮实验。
 
-详细步骤和文件格式见 [使用指南](docs/USER-GUIDE.md)。`fixtures/` 提供带 DEMO 标识的证据、商品、指标、联系人和订单样例，导入前请替换实际 ID。
+详细步骤和文件格式见 [使用指南](USER-GUIDE.md)。`fixtures/` 提供带 DEMO 标识的证据、商品、指标、联系人和订单样例，导入前请替换实际 ID。
 
 ### 可选：接入模型
 
@@ -144,7 +144,7 @@ REMOTION_BROWSER_PATH=/path/to/chrome
 | Shopify / HubSpot | 商品 CSV、联系人 JSON 的本地映射与导入                     | 文件导入，不是远程账户同步。                                               |
 | B2B 与零售        | 线索跟进、未发送拓展稿、库存/销售退款导入、促销人工核销    | 没有邮件发送、POS 或支付执行能力。                                         |
 
-各适配器的配置、验证边界和参考接口见 [平台矩阵](docs/PLATFORMS.md)。
+各适配器的配置、验证边界和参考接口见 [平台矩阵](PLATFORMS.md)。
 
 ## 数据与运行方式
 
@@ -201,20 +201,20 @@ docs/                使用指南、架构与产品截图
 
 ## 文档与参与
 
-| 文档                               | 内容                                           |
-| ---------------------------------- | ---------------------------------------------- |
-| [使用指南](docs/USER-GUIDE.md)     | 第一轮工作流、事实复核、交付、指标与导入格式。 |
-| [架构与设计](docs/ARCHITECTURE.md) | 模块边界、审批与安全规则、设计参考和依赖许可。 |
-| [平台矩阵](docs/PLATFORMS.md)      | 已实现适配器、配置方法与尚未提供的能力。       |
-| [路线图](docs/ROADMAP.md)          | 当前版本能力、已知限制与后续重点。             |
-| [贡献指南](CONTRIBUTING.md)        | 环境、验证、问题反馈及 Pull Request 要求。     |
-| [安全策略](SECURITY.md)            | 适用运行边界与漏洞反馈方式。                   |
+| 文档                                   | 内容                                           |
+| -------------------------------------- | ---------------------------------------------- |
+| [使用指南](USER-GUIDE.md)              | 第一轮工作流、事实复核、交付、指标与导入格式。 |
+| [架构与设计](ARCHITECTURE.md)          | 模块边界、审批与安全规则、设计参考和依赖许可。 |
+| [平台矩阵](PLATFORMS.md)               | 已实现适配器、配置方法与尚未提供的能力。       |
+| [路线图](ROADMAP.md)                   | 当前版本能力、已知限制与后续重点。             |
+| [贡献指南](../.github/CONTRIBUTING.md) | 环境、验证、问题反馈及 Pull Request 要求。     |
+| [安全策略](../.github/SECURITY.md)     | 适用运行边界与漏洞反馈方式。                   |
 
 欢迎提交可复现问题、文档改进和范围明确的 Pull Request。产品优先保证事实、版本、审批与统计的正确性，再扩展平台连接。请通过 [Issues](https://github.com/xliang-L/harbor/issues) 讨论需求。
 
 ## 许可
 
-Harbor 自身的源码和文档采用 [MIT License](LICENSE.md)。依赖保留各自许可；尤其 [Remotion](https://www.remotion.dev/license)、[GSAP](https://gsap.com/standard-license/) 和 [FFmpeg](https://ffmpeg.org/legal.html) 有各自的使用与分发条件，本项目的 MIT 许可不替代这些条款。
+Harbor 自身的源码和文档采用 [MIT License](../LICENSE.md)。依赖保留各自许可；尤其 [Remotion](https://www.remotion.dev/license)、[GSAP](https://gsap.com/standard-license/) 和 [FFmpeg](https://ffmpeg.org/legal.html) 有各自的使用与分发条件，本项目的 MIT 许可不替代这些条款。
 
 <div align="center">
   <sub>从一条有依据的信息，到下一次有把握的行动。</sub>

@@ -7,4 +7,4 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
-echo '准备完成。双击 启动Harbor.command 打开本地服务。'
+echo '准备完成。双击 scripts/macos/start.command 打开本地服务。'

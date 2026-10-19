@@ -2,7 +2,7 @@
 
 <img src="docs/images/cover.png" alt="Harbor — Local-first marketing workspace. From signals to action." width="100%" />
 
-**English** · [简体中文](README.zh-CN.md)
+**English** · [简体中文](docs/README.zh-CN.md)
 
 ### From signals to action.
 
@@ -10,7 +10,7 @@ A local-first marketing workspace built around evidence, human review and clear 
 
 [![CI](https://github.com/xliang-L/harbor/actions/workflows/ci.yml/badge.svg)](https://github.com/xliang-L/harbor/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-315B46?style=flat-square)](LICENSE.md) [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A522.13-315B46?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-315B46?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[Quick start](#quick-start) · [Preview](#preview) · [Capabilities](#capabilities) · [Documentation](#documentation) · [Contributing](CONTRIBUTING.md)
+[Quick start](#quick-start) · [Preview](#preview) · [Capabilities](#capabilities) · [Documentation](#documentation) · [Contributing](.github/CONTRIBUTING.md)
 
 </div>
 
@@ -89,7 +89,7 @@ npm run build
 npm start
 ```
 
-Open **[http://127.0.0.1:4317](http://127.0.0.1:4317)**. On Windows, replace the copy command with `Copy-Item .env.example .env`. On macOS, you can also use the included `启动Harbor.command` launcher.
+Open **[http://127.0.0.1:4317](http://127.0.0.1:4317)**. On Windows, replace the copy command with `Copy-Item .env.example .env`. On macOS, you can also use the [macOS launcher](scripts/macos/start.command) in `scripts/macos/`.
 
 `MODEL_ENABLED=false` is the default: try the workflow with templates before enabling a model. The application binds to the local loopback address.
 
@@ -201,7 +201,7 @@ docs/                Guides, architecture and product screenshots
 
 ## Documentation and contributing
 
-The README is available in [English](README.md) and [简体中文](README.zh-CN.md). The guides below are currently in Simplified Chinese.
+The README is available in [English](README.md) and [简体中文](docs/README.zh-CN.md). The guides below are currently in Simplified Chinese.
 
 | Document                                        | Contents                                                                                 |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -209,8 +209,8 @@ The README is available in [English](README.md) and [简体中文](README.zh-CN.
 | [Architecture and design](docs/ARCHITECTURE.md) | Module boundaries, approvals, security rules, design references and dependency licenses. |
 | [Platform matrix](docs/PLATFORMS.md)            | Implemented adapters, configuration and capabilities still outside the current scope.    |
 | [Roadmap](docs/ROADMAP.md)                      | Current capabilities, known limits and priorities.                                       |
-| [Contributing](CONTRIBUTING.md)                 | Environment setup, verification, issue reports and Pull Request expectations.            |
-| [Security policy](SECURITY.md)                  | Runtime boundaries and private vulnerability reporting.                                  |
+| [Contributing](.github/CONTRIBUTING.md)         | Environment setup, verification, issue reports and Pull Request expectations.            |
+| [Security policy](.github/SECURITY.md)          | Runtime boundaries and private vulnerability reporting.                                  |
 
 Reproducible bug reports, documentation improvements and focused Pull Requests are welcome. Harbor prioritizes correct facts, versions, approvals and metrics before expanding platform connectivity. Discuss requests in [Issues](https://github.com/xliang-L/harbor/issues).
 

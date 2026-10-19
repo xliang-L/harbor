@@ -46,7 +46,7 @@ flowchart TB
 
 新增界面放到对应 `src/features/<用途>/`；只有跨功能复用的组件或前端辅助代码进入 `components/` 和 `shared/`。API、业务规则、外部适配器与存储分别放入既有后端目录，不将页面组件或渲染模板堆回应用入口。
 
-根目录保留说明、许可证、必要工具配置与启动入口。测试截图、报告和视频进入被忽略的 `artifacts/`，业务导出与历史本地资料不进入源码仓库。
+根目录保留主 README、许可证、包清单、网页入口和工具自动发现所需的配置。贡献与安全策略放在 `.github/`，中文 README 放在 `docs/`，macOS 启动器放在 `scripts/macos/`。Prettier 选项保存在 `package.json`；浏览器测试配置位于 `tests/playwright.config.ts`，由 npm 脚本显式指定。测试截图、报告和视频进入被忽略的 `artifacts/`，业务导出与历史本地资料不进入源码仓库。
 
 ## 正确性约束
 
@@ -91,3 +91,15 @@ flowchart TB
 - [Payload](https://github.com/payloadcms/payload)、[OpenLineage](https://github.com/OpenLineage/OpenLineage)：版本快照与对象依赖，分别采用 MIT、Apache-2.0。
 
 本项目源码的 MIT 许可不覆盖第三方组件。HyperFrames 为 Apache-2.0；Remotion 使用自己的许可，GSAP 使用 Standard License；FFmpeg 与 npm 预编译发行包有各自许可及分发条件。详见 [Remotion](https://www.remotion.dev/license)、[GSAP](https://gsap.com/standard-license/)、[FFmpeg](https://ffmpeg.org/legal.html) 及锁定发行包中的 LICENSE/NOTICE。仓库不分发 `node_modules` 或这些工具的二进制。
+
+## 根目录文件为什么保留
+
+| 文件                                | 用途                                          |
+| ----------------------------------- | --------------------------------------------- |
+| `README.md`、`LICENSE.md`           | GitHub 项目入口与开源许可。                   |
+| `package.json`、`package-lock.json` | npm 脚本、依赖清单、Prettier 选项与锁定版本。 |
+| `index.html`                        | Vite 网页入口。                               |
+| `tsconfig.json`、`eslint.config.js` | TypeScript、编辑器与 ESLint 的自动配置发现。  |
+| `.editorconfig`、`.prettierignore`  | 编辑器格式与格式化排除规则。                  |
+| `.gitignore`、`.gitattributes`      | Git 忽略规则、换行和二进制文件处理。          |
+| `.env.example`                      | 本机环境配置样例；实际 `.env` 不上传。        |

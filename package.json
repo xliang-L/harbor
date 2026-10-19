@@ -10,9 +10,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "node --import tsx --test tests/server/*.test.ts",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
     "test:public": "MODEL_ENABLED=false node --import tsx scripts/verify/sources.ts",
-    "test:e2e:remotion": "TEST_RENDERER=remotion playwright test",
+    "test:e2e:remotion": "TEST_RENDERER=remotion playwright test --config tests/playwright.config.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -71,5 +71,14 @@
     "human-in-the-loop",
     "sqlite",
     "typescript"
-  ]
+  ],
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "endOfLine": "lf",
+    "proseWrap": "preserve"
+  }
 }
