@@ -207,11 +207,9 @@ The README is available in [English](README.md) and [简体中文](README.zh-CN.
 
 Reproducible bug reports, documentation improvements and focused Pull Requests are welcome. Harbor prioritizes correct facts, versions, approvals and metrics before expanding platform connectivity. Discuss requests in [Issues](https://github.com/xliang-L/harbor/issues).
 
-## License and acknowledgments
+## License
 
 Harbor's own source code and documentation are licensed under the [MIT License](LICENSE.md). Dependencies retain their own terms. In particular, [Remotion](https://www.remotion.dev/license), [GSAP](https://gsap.com/standard-license/) and [FFmpeg](https://ffmpeg.org/legal.html) have their own conditions for use and distribution; Harbor's MIT license does not replace them.
-
-Workflow inspiration comes from [Pomo](https://usepomo.ai/)'s public product description. README presentation draws on [Postiz](https://github.com/gitroomhq/postiz-app), [Frappe CRM](https://github.com/frappe/crm) and [Plausible](https://github.com/plausible/analytics). Harbor is an independent project and does not copy their source code, wording or brand assets.
 
 <div align="center">
   <sub>From a grounded signal to a considered next step.</sub>

@@ -205,11 +205,9 @@ docs/                使用指南、架构与产品截图
 
 欢迎提交可复现问题、文档改进和范围明确的 Pull Request。产品优先保证事实、版本、审批与统计的正确性，再扩展平台连接。请通过 [Issues](https://github.com/xliang-L/harbor/issues) 讨论需求。
 
-## 许可与致谢
+## 许可
 
 Harbor 自身的源码和文档采用 [MIT License](LICENSE.md)。依赖保留各自许可；尤其 [Remotion](https://www.remotion.dev/license)、[GSAP](https://gsap.com/standard-license/) 和 [FFmpeg](https://ffmpeg.org/legal.html) 有各自的使用与分发条件，本项目的 MIT 许可不替代这些条款。
-
-工作流灵感来自 [Pomo](https://usepomo.ai/) 的公开介绍；README 的产品展示方式参考 [Postiz](https://github.com/gitroomhq/postiz-app)、[Frappe CRM](https://github.com/frappe/crm) 与 [Plausible](https://github.com/plausible/analytics)。Harbor 为独立项目，没有复制这些项目的源码、文案或品牌素材。
 
 <div align="center">
   <sub>从一条有依据的信息，到下一次有把握的行动。</sub>
